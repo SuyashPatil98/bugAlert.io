@@ -1,0 +1,20 @@
+# Step 1: Use an official Python runtime as the base image
+FROM python:3.9-slim
+
+# Step 2: Set the working directory inside the container
+WORKDIR /app
+
+# Step 3: Copy the application files into the container
+COPY app.py /app/
+COPY random_forest_model.pkl /app/
+COPY xgboost_model.pkl /app/
+COPY requirements.txt /app/
+
+# Step 4: Install the required Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Step 5: Expose the port the application will run on
+EXPOSE 5000
+
+# Step 6: Define the command to run the application
+CMD ["python", "app.py"]

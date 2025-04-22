@@ -7,3 +7,8 @@ docker
 jupyter
 matplotlib
 seaborn
+flask
+joblib
+numpy
+scikit-learn
+xgboost
